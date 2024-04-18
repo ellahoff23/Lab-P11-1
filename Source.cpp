@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 
-const int ROWS = 6;
+const int ROWS = 7;
 const int COLUMNS = 13;
 int findRowIndex(int thisRow);
 int findSeatIndex(char thisSeat);
@@ -74,7 +74,7 @@ int main()
 	while (true)
 	{
 		displaySeatColumn(seats, COLUMNS);
-		cout << "Enter a seat or Q to quit: ";
+		cout << "\nEnter a seat or Q to quit: ";
 		int row;
 		char column;
 		cin >> row >> column;
@@ -88,7 +88,7 @@ int main()
 			cout << "Sorry, no such seat exists on the CRJ 200." << endl;
 		}
 		int rowindex = findRowIndex(row);
-		if (seatindex == 1 || seatindex == 0 && rowindex == 13)
+		if ((seatindex == 0 || seatindex == 1) && rowindex == 12)
 		{
 			cout << "Sorry, no such seat exists on the CRJ 200." << endl;
 		}
@@ -116,6 +116,8 @@ int findRowIndex(int thisRow)
 
 int findSeatIndex(char thisSeat)
 {
+	thisSeat = toupper(thisSeat);
+
 	if (thisSeat == 'D')
 	{
 		return 0;
