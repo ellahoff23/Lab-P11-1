@@ -53,7 +53,7 @@ int main()
 
 			char y = j + 48;
 			seats[3][i] = y;
-			j++;
+			j++; 
 		}
 
 	}
