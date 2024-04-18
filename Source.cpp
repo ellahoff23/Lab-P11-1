@@ -46,7 +46,7 @@ int main()
 		{
 			int temp = i + 1;
 			char x = temp + 48;
-			seats[3][i] = x;
+			seats[3][i] = x; 
 		}
 		else
 		{
